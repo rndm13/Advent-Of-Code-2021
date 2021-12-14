@@ -51,26 +51,7 @@ int main() {
     while (count_polymerization--)
         polymer_template = pair_insertion(&rules,&polymer_template,&character_count);
 
-    for (auto [key,value] : character_count)
-        std::cout << key <<' '<<value<<'\n';
-
     std::cout <<(*max_element(character_count.begin(),character_count.end(),
-                               [](std::pair<char,unsigned long long> a,std::pair<char,unsigned long long> b) {
-                               return a.second<b.second;
-                               })).first << ' '<<
-                (*max_element(character_count.begin(),character_count.end(),
-                               [](std::pair<char,unsigned long long> a,std::pair<char,unsigned long long> b) {
-                               return a.second<b.second;
-                               })).second <<' '<<
-                (*min_element(character_count.begin(),character_count.end(),
-                               [](std::pair<char,unsigned long long> a,std::pair<char,unsigned long long> b) {
-                               return a.second<b.second;
-                               })).first << ' '<<
-                (*min_element(character_count.begin(),character_count.end(),
-                               [](std::pair<char,unsigned long long> a,std::pair<char,unsigned long long> b) {
-                               return a.second<b.second;
-                               })).second <<' '<<
-                (*max_element(character_count.begin(),character_count.end(),
                                [](std::pair<char,unsigned long long> a,std::pair<char,unsigned long long> b) {
                                return a.second<b.second;
                                })).second-
